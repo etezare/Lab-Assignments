@@ -3,6 +3,7 @@ package edu.miu.cs.cs425.studentmgmt.model;
 import java.time.LocalDate;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,6 +31,7 @@ public class Student {
 	private ClassRoom studentClassRoom;
 
 	@NotBlank(message = "studentNumber is required")
+	@Column ( unique=true, nullable=false)
 	private String studentNumber;
 
 	@NotBlank(message = "firstName is required")
